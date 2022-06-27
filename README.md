@@ -7,6 +7,6 @@ Features:
 
 Auto plays music on page landing. (No longer needs manual tuning.)
 Clicks 'Keep listening' when prompted by inactivity box & refreshes page (if ever shown)
-Clicks 'Check it out' button when prompted; doing so does NOT redirect.
+Clicks 'Check it out' button when prompted.
 
 Auto refreshes after 50 failed plays and has "Now Playing" checks to ensure it is always playing when connected.
