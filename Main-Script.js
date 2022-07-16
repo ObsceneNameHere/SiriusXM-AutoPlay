@@ -3,7 +3,7 @@
 // @license        GNU GPLv3
 // @description    Auto plays music on page load, checks & clears idle checks then refreshes page.
 // @match          http*://player.siriusxm.com/*
-// @version        2.1.4
+// @version        2.2.0
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @namespace https://greasyfork.org/en/scripts/411977-siriusxm-player-continuous-play
@@ -26,7 +26,7 @@ function main()
     let rTcnt=0;
 
 
-    //console.log('Entry');
+    /*console.log('Entry');*/
     setTimeout(() => {
         init1();
     }, 1*1000)
@@ -37,12 +37,12 @@ function main()
         if (rS1 === 'complete')
         {
             pB2=document.getElementsByClassName('play-pause-btn').item('title').getAttribute('title').toString();
-            //console.log('init1');
+            /*console.log('init1');*/
             cPlay();
         }
         else
         {
-            //console.log('init2');
+            /*console.log('init2');*/
             setTimeout(() => {
                 init1();
             }, 5*1000)
@@ -55,7 +55,7 @@ function main()
         {
             try
             {
-                //console.log('cPlay1');
+                /*console.log('cPlay1');*/
                 pB1[0].click();
                 pCheck();
             }
@@ -70,12 +70,12 @@ function main()
         }
         if (pB2 === 'Pause')
         {
-            //console.log('cPlay2');
+            /*console.log('cPlay2');*/
             pCheck();
         }
         else
         {
-            //console.log('cPlay3');
+            /*console.log('cPlay3');*/
             setTimeout(() => {
                 init1();
             }, 5*1000)
@@ -87,24 +87,24 @@ function main()
 
         if (pU1.length > 0)
         {
-            //console.log('pCheck1');
+            /*console.log('pCheck1');*/
             pU1[0].click();
             wReload();
         }
         if (pU2.length > 0)
         {
-            //console.log('pCheck2');
+            /*console.log('pCheck2');*/
             pU2[0].click();
             wReload();
         }
         if (pB2 === 'Play')
         {
-            //console.log('pCheck3');
+            /*console.log('pCheck3');*/
             rTry();
         }
         else
         {
-            //console.log('pCheck4');
+            /*console.log('pCheck4');*/
             setTimeout(() => {
                 pCheck();
             }, 10*1000)
@@ -119,7 +119,7 @@ function main()
         }
         else
         {
-            //console.log('rTry1');
+            /*console.log('rTry1');*/
             pB2;
             setTimeout(() => {
                 cPlay();
@@ -129,13 +129,13 @@ function main()
 
     function wReload()
     {
-       //console.log('wReload1');
+       /*console.log('wReload1');*/
         setTimeout(() => {
             location.reload();
         }, 10*1000)
     }
 }
-//console.log('OOB');
+/*console.log('OOB');*/
 setTimeout(() => {
     main();
 }, 3*1000)
