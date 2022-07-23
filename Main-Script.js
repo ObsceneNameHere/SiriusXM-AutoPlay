@@ -3,7 +3,7 @@
 // @license        GNU GPLv3
 // @description    Auto plays music on page load, checks & clears idle checks then refreshes page.
 // @match          http*://player.siriusxm.com/*
-// @version        2.2.0
+// @version        2.2.1
 // @grant          GM_getValue
 // @grant          GM_setValue
 // @namespace https://greasyfork.org/en/scripts/411977-siriusxm-player-continuous-play
@@ -22,6 +22,8 @@ function main()
     let pU1=document.getElementsByClassName("modal-button-1");
     /* defines another pointless pop up 'Hope you are enjoying siriusXM' */
     let pU2=document.getElementsByClassName("overlay-button-1");
+    /* defines Technical Issue pop up */
+    let pU3=document.getElementsByClassName("modal--body modal--body--alert");
     /*defines times an attempt to play has occurred*/
     let rTcnt=0;
 
@@ -97,14 +99,20 @@ function main()
             pU2[0].click();
             wReload();
         }
-        if (pB2 === 'Play')
+        if (pU3.length > 0)
         {
             /*console.log('pCheck3');*/
+            pU3[0].click();
+            wReload();
+        }
+        if (pB2 === 'Play')
+        {
+            /*console.log('pCheck4');*/
             rTry();
         }
         else
         {
-            /*console.log('pCheck4');*/
+            /*console.log('pCheck5');*/
             setTimeout(() => {
                 pCheck();
             }, 10*1000)
